@@ -1,1 +1,68 @@
-var _0x22f16d=_0xb66c;(function(_0x128d49,_0x832c67){var _0x1966c5=_0xb66c,_0x3cf7f1=_0x128d49();while(!![]){try{var _0x57afa3=parseInt(_0x1966c5(0x1ed))/(0x1a59+0xae9*-0x1+-0xf6f*0x1)+parseInt(_0x1966c5(0x1f0))/(-0xd8c+-0x39*0x8+-0x2*-0x7ab)+-parseInt(_0x1966c5(0x1e9))/(0xcb5+0x1*0x12d1+-0x1*0x1f83)+-parseInt(_0x1966c5(0x1e7))/(0x154*-0x13+0x8*0x46c+-0x120*0x9)+parseInt(_0x1966c5(0x1e0))/(-0xbf6+0x10dd+0xfa*-0x5)*(-parseInt(_0x1966c5(0x1e2))/(-0x142b+0x24f*0x1+0x11e2))+parseInt(_0x1966c5(0x1f2))/(-0xd9*-0x2+0x139f*0x1+0x19*-0xda)*(parseInt(_0x1966c5(0x1df))/(0x1271*-0x1+-0x558+0x5b*0x43))+parseInt(_0x1966c5(0x1ec))/(0x515+-0x1bd5+0x16c9);if(_0x57afa3===_0x832c67)break;else _0x3cf7f1['push'](_0x3cf7f1['shift']());}catch(_0x202094){_0x3cf7f1['push'](_0x3cf7f1['shift']());}}}(_0x32cd,0x2cf*0x65+0x198ee+-0xa611));function runoob(){var _0x15d2f6=_0xb66c,_0x5f06f3={'HPIhj':_0x15d2f6(0x1e4)+'d!'};console[_0x15d2f6(0x1f4)](_0x5f06f3[_0x15d2f6(0x1e3)]);}runoob();function _0xb66c(_0x52b036,_0x437913){var _0xfe36d9=_0x32cd();return _0xb66c=function(_0x4e8c39,_0x47315f){_0x4e8c39=_0x4e8c39-(-0x150b*-0x1+0xa33+-0x1d5f);var _0x2f7528=_0xfe36d9[_0x4e8c39];return _0x2f7528;},_0xb66c(_0x52b036,_0x437913);}var i=dialogs[_0x22f16d(0x1ea)](_0x22f16d(0x1eb),'1','2','3','退出');i==-(0x19d5+0x1*-0x130d+-0x5*0x15b)&&toast(_0x22f16d(0x1f1));if(i==0xc7*-0x2f+0x21a0*-0x1+0x4629)function1();else{if(i==-0x24a7+0x1a1e*0x1+0x2*0x545)function2();else{if(i==-0xd7*-0x25+-0x416*0x7+-0x277)function3();else i==-0x2*-0x66e+-0xdfe+-0x1*-0x125&&function4();}}function function1(){}function _0x32cd(){var _0x2a4813=['length','all','99470LaYWgS','选一个呗','7RUzPUq','pop','log','1543760VOqwRG','5hHZQlD','myEngine','1099806DtgLWr','HPIhj','Hello\x20Worl','DJLDu','forceStop','619024CCQbCn','zDKGp','533262OpHyJo','select','请选择你想要的功能','2322612mIdaGF','149830srtDOX'];_0x32cd=function(){return _0x2a4813;};return _0x32cd();}function function2(){}function function3(){}function function4(){var _0x2b50ef=_0x22f16d,_0x357889={'zDKGp':function(_0x414f3d,_0x3e590e){return _0x414f3d<_0x3e590e;},'DJLDu':function(_0x5c584e,_0x155fff){return _0x5c584e!=_0x155fff;}};let _0x52b391=0x1179+0x1*0x959+-0x1ad2;var _0x49e12f=engines[_0x2b50ef(0x1ef)](),_0x38f121=_0x49e12f[_0x2b50ef(0x1ee)],_0x796682=engines[_0x2b50ef(0x1e1)]();for(let _0x3ef1e4=-0xf54+0x35*-0x5f+0x22ff;_0x357889[_0x2b50ef(0x1e8)](_0x3ef1e4,_0x38f121);_0x3ef1e4++){var _0x5ddbbc=_0x49e12f[_0x2b50ef(0x1f3)]();if(_0x357889[_0x2b50ef(0x1e5)](_0x5ddbbc,_0x796682))_0x52b391++,_0x5ddbbc[_0x2b50ef(0x1e6)]();else{}}};
+var i = dialogs.select(
+    "请选择你想要的功能", 
+    "最后战役",/*1*/
+    "待更新",
+    "待更新", 
+    "退出");
+if (i == -1) {
+    toast("选一个呗");
+}
+if (i == 0) {gn1()}
+else if (i == 1){gn0()}
+else if (i == 2){gn0()}
+else if (i == 3){exit()}
+
+
+
+function gn0(){toastLog("敬请期待");}
+function gn1(){
+    file = open("./"+"最后战役血量","a");
+    file.close();
+    file = open("./"+"最后战役血量","r");
+    a=file.read();
+    file.close();
+    if (a==""){
+    下载("最后战役血量");}else{toast("ok");
+    var result = shell("cp ./最后战役血量 /data/lost_found", true);
+toast(result.error);}
+    
+}
+function gn2(){}
+function gn3(){}
+
+
+
+
+
+function 下载(file){
+        url = "https://raw.githubusercontent.com/llovely45/jd/master/"+file;
+        res = http.get(url);
+        if(res.statusCode == 200){
+        update = res.body.string();
+        file = open("./"+file,"w");
+        file.write(update);
+        file.close();
+        toastLog(file+"下载成功");
+        b = 1;
+        }else{
+            b=0;
+            toastLog(file+"下载失败失败:"+res.statusMessage);}
+        if (b!=1){toast("请重新下载");}else{
+            toastLog("更新完成")
+            }
+}
+    
+function exit(){
+    let mm = 0
+    var 脚本数组 = engines.all()
+    var 元素数量 = 脚本数组.length
+    var 当前脚本 = engines.myEngine()
+    for (let i = 0; i < 元素数量; i++) {
+        var 删除数组 = 脚本数组.pop()
+
+        if (删除数组 != 当前脚本) {
+            mm++
+            删除数组.forceStop()
+
+        } else {}
+    }}
